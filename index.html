@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #667eea;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        input, button {
+            display: block;
+            width: 250px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<form onsubmit="login(event)">
+    <h2>Login</h2>
+    <input id="email" type="email" placeholder="Email" required>
+    <input id="password" type="password" placeholder="Password" required>
+    <button>Login</button>
+    <p id="msg"></p>
+</form>
+
+<script>
+function login(e) {
+    e.preventDefault();
+
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    if (email == "user@gmail.com" && password == "1234")
+        document.getElementById("msg").innerHTML = "Login successful!";
+    else
+        document.getElementById("msg").innerHTML = "Invalid login!";
+}
+</script>
+
+</body>
+</html>
